@@ -1,0 +1,132 @@
+#mainbodybanner{
+  margin-left: 260px;
+}
+
+#sm-banner{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  
+  }
+  
+  #sm-banner .banner-box .white{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-color: #d6d32c;
+  }
+  
+  #sm-banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("../../assets/images/store-winer.png");
+    width: 560px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 10px;
+    
+    
+  
+  }
+  
+  
+  
+  #sm-banner .banner-box h2{
+    color:white;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  
+  #sm-banner span{
+    color:white;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 15px;
+  }
+  
+  #sm-banner .banner-box:hover button{
+    background-color: #d6d32c;
+    border: 1px #d6d32c;
+    color: #fff;
+    cursor: pointer;
+  }
+
+
+  #sm-banner .banner-box2{
+    width: 500px;
+    background-image: url("../../assets/images/gift-card.png");
+   
+    background-position: left;
+    background-repeat: no-repeat;
+    border-right: 8px;  
+  }
+  
+  .banner-box2 h2{
+    color: #d6d32c;
+  }
+
+
+  @media (width:2560px) {
+    #sm-banner .banner-box{
+      width: 1450px;
+    }
+
+    #sm-banner .banner-box2{
+      width: 800px;
+    }
+
+    #sm-banner .banner-box button{
+      font-size: xx-large;
+      border-radius: 15px;
+    }
+
+
+    #sm-banner .banner-box h2{
+      font-size: 80px;
+    }
+
+    #sm-banner .banner-box span{
+      font-size: 60px;
+  
+    }
+  }
+
+  @media (max-width:768px) {
+    #sm-banner .banner-box button{
+     
+      width: 100%;
+      height: 100%;
+     
+    }
+  }
+
+
+  @media (max-width:540px) {
+    #mainbodybanner{
+     margin-left: 10px;
+    }
+  }
+
+
+  @media (max-width:425px) {
+       #mainbodybanner{
+        margin-left: 10px;
+       }
+
+       #sm-banner .banner-box button{
+     
+        width: 100%;
+        height: 100%;
+       
+      }
+  }
+  
+
+  

@@ -1,0 +1,57 @@
+#mainbodyparticipate {
+    margin-left: 260px;
+    margin-top: 50px;
+}
+
+.heading{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.hyundai{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+   
+}
+
+.hyundai img{
+   width: 90%;
+   
+   
+}
+
+.landcruiser{
+    margin-top: 20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.09);
+    
+}
+
+.landcruiser img{
+    width: 90%;
+    
+}
+
+
+@media (max-width:540px) {
+    #mainbodyparticipate{
+        margin-left: 10px;
+    }
+}
+
+@media (max-width:425px) {
+    #mainbodyparticipate{
+        margin-left: 10px;
+    }
+
+    .hyundai img{
+        width: 100%;
+        
+     }
+
+
+     .landcruiser img{
+        width: 100%;
+        
+     }
+}

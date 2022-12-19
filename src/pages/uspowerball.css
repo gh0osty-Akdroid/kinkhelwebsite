@@ -1,0 +1,288 @@
+.uspowerballbody{
+    margin-left: 280px;
+}
+
+.headpower{
+    width: auto;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.headpower img{
+    width: 100%;
+    height: 100%;
+}
+
+.headpower .price{
+    width: 1150px;
+    height: 200px;
+    position: absolute;
+    text-align: center;
+    
+    
+}
+
+.headpower .price h2{
+    margin-top: 90px;
+    color: white;
+    font-size: 25px;
+}
+
+.powerballbodysection{
+    border-radius: 10px;
+    margin-top: 50px;
+    width: 98%;
+    height: auto;
+   
+    padding: 10px 10px 0 0;
+
+}
+
+.powerballsection-header{
+    margin-left: 10px;
+    
+}
+
+.powerballsection-header .howtoplay{
+    margin-top: 25px;
+}
+
+.powerballsection-header .howtoplay .underline{
+    width: 600px;
+    height: 2px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+.powerballsection-header .howtoplay p{
+    font-size: 16px;
+}
+
+
+.powerballsection-header .howtoplay li{
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+
+.powerballsection-header .gamebox-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.powerballsection-header .gamebox-container .gamebox{
+    
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.powerballsection-header .gamebox-container .gamebox .gamebox-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #fce507;
+    border-radius: 10px;
+}
+
+
+.powerballsection-header .gamebox-container .gamebox .gamebox-numbers{
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+    padding: 30px;
+    background-color: #fce507;
+}
+
+
+.powerballsection-header .gamebox-container .gamebox .gamebox-numbers .number{
+    width: 28px;
+    height: auto;
+    border: 1px solid;
+    border-radius: 50%;
+    text-align: center;
+}
+
+
+.powerballsection-header .gamebox-container .gamebox .gamebox-footer{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    background-color: #3fb6f7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+
+.loginorregister{
+    text-align: center;
+    list-style: none;
+    
+}
+
+
+.underlinetwo{
+    width: 600px;
+    height: 2px;
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+
+.luckypick{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.luckypick-card{
+    width: auto;
+    height: auto;
+}
+
+.luckypick-card-numbers{
+     margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.luckypick-card-numbers .card-numbers{
+    width: 30%;
+    height: 30%;
+    border: 1px solid;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #b0b0b0;
+}
+
+
+.luckypick-card-numbers .card-numbers:hover{
+    cursor: pointer;
+}
+
+.picknumber{
+  display: flex;
+ 
+  justify-content: flex-end;
+}
+
+
+
+.underlinethree{
+    width: 600px;
+    height: 2px;
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 25px; 
+}
+
+.policyandnotes{
+   margin-top: 25px; 
+   margin-bottom: 25px;
+}
+
+.policyandnotes p{
+    font-size: 16px;
+}
+
+
+.policyandnotes li{
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.underlinefour{
+    width: 600px;
+    height: 2px;
+    background-color: black;
+    border-radius: 5px;
+     
+}
+
+
+
+
+/* .powerballimage{
+  margin-top: 50px;
+  padding: 10px;
+  height: auto;
+  width: auto;
+}
+
+.powerballimage img{
+    width: 100%;
+    height: auto;
+}
+
+.powerballheading{
+    
+    display: flex;
+    height: 60px;
+    flex: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    border-radius: 30px;
+    border: 1px solid;
+    margin: 50px 10px 0px 10px;
+    background-color: #ed0018;
+} */
+
+
+/* .powerballheading .imgandtext{
+    display: flex;
+    align-items: center;
+   
+}
+
+.powerballheading .imgandtext .text{
+    color: white
+}
+
+.imgandtext .headingimg{
+    width: 25%;
+    height: 25%;
+}
+
+.headingimg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.pricevalue{
+   margin-right: 300px; 
+   color: white;
+}
+
+.timer{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    justify-content: space-between;
+}
+
+.timer li{
+    list-style: none;
+    font-size: 20px;
+    color: white;
+}
+
+.timer h2{
+    margin-top: 10px;
+    margin-left: 5px;
+    color: white;
+}
+ */

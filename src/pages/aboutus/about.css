@@ -1,0 +1,16 @@
+.about{
+    margin-left: 280px;
+}
+
+.about-header{
+    background-color: blue;
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+

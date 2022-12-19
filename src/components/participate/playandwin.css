@@ -1,0 +1,57 @@
+.header-playandwin{
+    margin-left: 280px;
+    height: 80%;
+    width: auto;
+}
+
+.header-playandwin .img{
+    width: 100%;
+    height: 100%;
+}
+
+.playandwin-body{
+    margin-left: 280px;
+    margin-top: 50px;
+}
+
+.landcruiser-img{
+    width: 80%;
+    height: 80%;
+    margin: 25px 10px;
+}
+
+.landcruiser-img img{
+    width: 100%;
+    height: 100%;
+}
+.participants{
+    text-align: center;
+
+}
+
+.participants p{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.playandwin-button{
+    text-align: center;
+    padding: 15px 0;
+}   
+
+.playandwin-button button{
+    width: 15%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    background-color: #4cadc9;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.playandwin-button button:hover{
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+

@@ -1,0 +1,272 @@
+.collapseable-faq{
+    margin-left: 280px;
+}
+
+
+.infobody-banner-faq{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    padding: 40px 50px 0 50px;
+    background-color: #4713a8;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  
+  
+  .infobody-banner-faq .info-header{
+    color: white;
+  
+    width: 25%;
+    height: 50%;
+    margin: 20px 20px;
+  }
+  
+  
+  .infobody-banner-faq .woman-image{
+    width: 70%;
+    height: 70%;
+  }
+  
+  .woman-image img{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .info-header-faq{
+    color: white;
+  }
+  
+ 
+  
+  
+
+  .accordion-faq{
+    margin-right: 20px;
+    margin-bottom: 50px;
+  }
+
+  .accordion-faq-one{
+    margin-bottom: 50px;
+  }
+
+  .accordion-faq-two{
+    margin-bottom: 50px;
+  }
+
+
+  @media (width: 2560px) {
+    .accordion-button, .accordion-body{
+      font-size: 50px;
+    }
+  }
+
+
+
+  @media (max-width: 1440px) {
+    .accordion-button, .accordion-body{
+      font-size: 25px;
+    }
+  }
+
+
+
+  @media (max-width: 1024px) {
+    .accordion-button, .accordion-body{
+      font-size: 20px;
+    }
+
+
+    .infobody-banner-faq .info-header{
+      
+      width: 40%;
+      height: 50%;
+      margin: 20px 20px;
+    }
+    
+    
+    .infobody-banner-faq .woman-image{
+      margin-top: 100px;
+      width: 80%;
+      height: 80%;
+    }
+     
+    .info-header-faq h1{
+      font-size: 30px;
+    }
+
+
+    .info-header-faq h3{
+      font-size: 25px;
+    }
+    
+    
+    
+  }
+
+
+
+  @media (max-width: 768px) {
+    .accordion-button, .accordion-body{
+      font-size: 18px;
+    }
+
+
+    .infobody-banner-faq .info-header{
+      
+      width: 40%;
+      height: 50%;
+      margin: 10px 10px;
+    }
+    
+    
+    .infobody-banner-faq .woman-image{
+      
+      width: 100%;
+      height: 100%;
+    }
+     
+    .info-header-faq h1{
+      font-size: 18px;
+    }
+
+
+    .info-header-faq h3{
+      font-size: 12px;
+    }
+    
+    
+    
+  }
+
+
+  @media (max-width: 540px) {
+    .collapseable-faq{
+      margin-left: 10px;
+  }
+  }
+
+
+
+  @media (max-width: 425px) {
+
+    .collapseable-faq{
+      margin-left: 10px;
+  }
+
+    .accordion-button, .accordion-body{
+      font-size: 15px;
+    }
+
+
+    .infobody-banner-faq .info-header{
+      
+      width: 40%;
+      height: 50%;
+     
+    }
+    
+    
+    .infobody-banner-faq .woman-image{
+      
+      width: 100%;
+      height: 100%;
+    }
+     
+    .info-header-faq h1{
+      font-size: 16px;
+    }
+
+
+    .info-header-faq h3{
+      font-size: 10x;
+    }
+    
+    
+    
+  }
+
+
+  @media (max-width: 375px) {
+
+    .collapseable-faq{
+      margin-left: 10px;
+  }
+
+    .accordion-button, .accordion-body{
+      font-size: 15px;
+    }
+
+
+    .infobody-banner-faq .info-header{
+      
+      width: 40%;
+      height: 50%;
+     
+    }
+    
+    
+    .infobody-banner-faq .woman-image{
+      
+      width: 100%;
+      height: 100%;
+    }
+     
+    .info-header-faq h1{
+      font-size: 16px;
+    }
+
+
+    .info-header-faq h3{
+      font-size: 10x;
+    }
+    
+    
+    
+  }
+
+
+
+  @media (max-width: 320px) {
+
+    .collapseable-faq{
+      margin-left: 10px;
+  }
+
+    .accordion-button, .accordion-body{
+      font-size: 15px;
+    }
+
+
+    .infobody-banner-faq .info-header{
+      
+      width: 60%;
+      height: 50%;
+      margin: 5px 5px;
+     
+    }
+    
+    
+    .infobody-banner-faq .woman-image{
+      
+      width: 100%;
+      height: 100%;
+    }
+     
+    .info-header-faq h1{
+      font-size: 14px;
+    }
+
+
+    .info-header-faq h3{
+      font-size: 10px;
+    }
+    
+    
+    
+  }
+  

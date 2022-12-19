@@ -1,0 +1,63 @@
+.header
+{
+  
+    
+    margin-left: 250px;
+    
+}
+
+
+
+@media (width:2560px) {
+  .header {
+    width: 2300px;
+  }
+
+  .img{
+    width: 100%;
+  }
+  
+}
+
+
+@media (max-width: 540px) {
+  .header{
+    margin-left: 10px;
+  
+  }
+}
+
+@media (max-width: 425px) {
+  .header{
+    margin-left: 10px;
+  
+  }
+
+  .img{
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .header{
+    margin-left: 10px;
+  
+  }
+
+  .img{
+    width: 100%;
+  }
+}
+
+
+@media (width: 375px) {
+  .header{
+    margin-left: 10px;
+  
+  }
+
+  .img{
+    width: 100%;
+  }
+}

@@ -1,0 +1,293 @@
+#mainbodyhijackpot{
+    margin-left: 260px;
+    margin-top: 50px;
+  }
+  .headtwo {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+  }
+
+  .headtwo li{
+    list-style: none;
+    margin-right: 10px;
+  }
+
+  .headtwo p{
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+  .cardf{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    
+  }
+
+  .cardf::-webkit-scrollbar{
+    display: none;
+  }
+
+
+  .cardone{
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin:10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  }
+  
+  .cardone:hover{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardone .imgf img{
+    width: 70%;
+    height: 70%
+  
+  }
+  
+  .pickf{
+    width: 60%;
+    height: 40px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #4381df;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .pickf:hover{
+    background-color: #088178;
+  
+  }
+  
+  .textf h2,h3{
+    font-size: medium;
+  }
+
+
+  @media (width:2560px) {
+    .headtwo li{
+      list-style: none;
+      margin-right: 10px;
+      font-size: 60px;
+  
+    }
+
+    .headtwo h3{
+      margin-top: 20px;
+      font-size: 50px;
+    }
+  
+    .headtwo p{
+      margin-top: 20px;
+      margin-left: 5px;
+      font-size: 50px;
+    }
+    .cardone{
+      width: 500px;
+      align-items: center;
+      text-align: center;
+    }
+
+
+
+    .cardone .textf h2,h3{
+      font-size: 50px;
+    }
+
+    .pickf{
+      width: 80%;
+      height: 70px;
+      font-size: 40px;
+      text-align: center;
+    }
+
+  }
+
+
+  @media (max-width:1024px) {
+    .cardone{
+      width: 200px;
+      align-items: center;
+      text-align: center;
+    }
+
+
+
+    .cardone .textf h2,h3{
+      font-size: 20px;
+    }
+
+    .pickf{
+      width: 80%;
+      height: 30px;
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width:768px) {
+    .cardone{
+      width: 250px;
+      align-items: center;
+      text-align: center;
+    }
+
+
+
+    .cardone .textf h3{
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .cardone .textf h2 {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    .pickf{
+      width: 80%;
+      height: 30px;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .headtwo p{
+      font-size: 15px;
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+
+    .headtwo h3{
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width:540px) {
+    #mainbodyhijackpot{
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width:425px) {
+    #mainbodyhijackpot{
+      margin-left: 10px;
+    }
+
+    .headtwo li{
+      list-style: none;
+      margin-right: 10px;
+      font-size: 20px;
+  
+    }
+  
+    .headtwo h3{
+      margin-top: 20px;
+      font-size: 15px;
+    }
+  
+    .headtwo p{
+      margin-top: 30px;
+      margin-left: 5px;
+      font-size: 15px;
+    }
+
+
+    .cardone .imgf img{
+      width: 120px;
+    }
+    
+    .cardone{
+      width: 2500px;
+      align-items: center;
+      text-align: center;
+    }
+
+
+
+    .cardone .textf h2,h3{
+      font-size: 20px;
+    }
+
+    .pickf{
+      width: 80%;
+      height: 30px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+  }
+
+
+  @media (max-width:375px) {
+    .headtwo li{
+      list-style: none;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-size: 15px;
+  
+    }
+  
+    .headtwo h3{
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  
+    .headtwo p{
+      margin-top: 30px;
+      margin-left: 5px;
+      font-size: 12px;
+    }
+  }
+
+
+  @media (max-width:320px) {
+    .headtwo li{
+      list-style: none;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-size: 15px;
+  
+    }
+  
+    .headtwo h3{
+      margin-top: 20px;
+      font-size: 10px;
+    }
+  
+    .headtwo p{
+      margin-top: 28px;
+      margin-left: 5px;
+      font-size: 8px;
+    }
+  }
+
+
+  @media (max-width:280px) {
+    .headtwo li{
+      list-style: none;
+      margin-top: 10px;
+      margin-right: 5px;
+      font-size: 15px;
+  
+    }
+  
+    .headtwo h3{
+      margin-top: 20px;
+      font-size: 10px;
+    }
+  
+    .headtwo p{
+      margin-top: 28px;
+      margin-left: 2px;
+      font-size: 8px;
+    }
+  }

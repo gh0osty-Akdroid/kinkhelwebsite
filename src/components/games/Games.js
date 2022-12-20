@@ -7,19 +7,12 @@ import * as MdIcons from "react-icons/md";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
+import { Url } from "../../Url";
 
 
 const Games = () => {
   const [data, setData] = useState([])
-  const Url = axios.create({
-    baseURL: "http://52.26.60.188:6969/api/v1",
-    headers: {
-      'Access-Control-Allow-Origin': ['http://44.237.37.194:6001', "http://52.26.60.188:6969/", "http://localhost:3001"],
-      'Content-Type': 'application/x-www-form-urlencoded'
-
-    }
-  })
-
+  
   useEffect(() => {
     Url.get('/games?site=893022452').then((data) => {
       setData(data?.data?.data)
@@ -53,10 +46,12 @@ const Games = () => {
                 <div className="text">
                   <p>{e?.name}</p>
                   <h6>Prize: {e.prize}</h6>
-                  <a href={`http://35.80.167.18:81/games/${e.id}/play`}>
+                  {/* <a href={`http://35.80.167.18:81/games/game/${e.id}/play`}>
+                    <button className="pick" >Quick Pick</button>
+                  </a> */}
+                  <a href={`/game/${e.id}`}>
                     <button className="pick" >Quick Pick</button>
                   </a>
-                  
                 </div>
               </div>
             )

@@ -37,10 +37,12 @@ function Category() {
                                         <div className="text">
                                             <p>{e?.name}</p>
                                             <h6>Prize: {e.prize}</h6>
-
-                                            <a href={`http://35.80.167.18:81/games/${e.id}/play`} target={'_blank'}>
+                                            <a href={`/game/${e.id}`}>
                                                 <button className="pick" >Quick Pick</button>
                                             </a>
+                                            {/* <a href={`http://35.80.167.18:81/games/${e.id}/play`} target={'_blank'}>
+                                                <button className="pick" >Quick Pick</button>
+                                            </a> */}
                                         </div>
                                     </div>
                                 )

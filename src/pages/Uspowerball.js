@@ -102,11 +102,7 @@ const Uspowerball = () => {
 
             <div className="loginorregister">
               <h3>
-                Please {""}
-                <span style={{ color: 'blue' }} onClick={() => window.open('http://35.80.167.18:81')}>Register </span>
-                or {""}
-                <span style={{ color: 'blue' }} onClick={() => window.open('http://35.80.167.18:81')}>Login </span>
-                to play.
+                <a href={`http://35.80.167.18:81/games/${id}/play`}>Click to play</a>
               </h3>
             </div>
 

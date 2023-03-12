@@ -7,8 +7,7 @@ import "./customerreward.css"
 const CustomerReward = () => {
   return (
     <div>
-        <Sidebar />
-        <Navbar />
+
       <div className="customerreward">
         <div className="customer-h4">
           <h4>Customer Reward Policy</h4>
@@ -42,7 +41,7 @@ const CustomerReward = () => {
           </p>
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };

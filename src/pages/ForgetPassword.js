@@ -1,18 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import ReactPhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
-import { ErrorHandler, ErrorNotification, SuccessNotification } from '../components/NotificationProvider';
-import { Box, Button, PasswordInput, Select } from '@mantine/core';
+import { Box, Button, PasswordInput } from '@mantine/core';
 import OTPInput, { ResendOTP } from "otp-input-react";
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { Title } from '../components/Header';
-import { Url } from '../Utilities/Urls';
+import { Url } from '../Url';
+import { ErrorHandler, SuccessNotification } from '../components/ErrorNotification';
 
 
 const ForgetPassword = () => {
-  const history = useNavigate()
 
   const [mode, setMode] = useState(1)
   const [log_phone, setPhone] = useState("")
@@ -50,15 +48,13 @@ const ForgetPart = ({ setPhone, log_phone, setMode }) => {
   const [OTP, setOTP] = useState("")
   const [success, setSuccess] = useState(false)
 
-
-
   const handleLogin = (e) => {
     e.preventDefault()
     const body = {
       email: `${log_phone}`,
 
     }
-    Url.post(`/forget-password`, body).then((res) => {
+    Url().post(`/forget-password`, body).then((res) => {
       SuccessNotification({ title: "Sent!", message: res?.data?.data })
       setSuccess(true)
     }).catch(err => {
@@ -85,7 +81,7 @@ const ForgetPart = ({ setPhone, log_phone, setMode }) => {
     const body = {
       token: OTP,
     }
-    Url.post(`/reset-password/${log_phone}`, body).then((res) => {
+    Url().post(`/reset-password/${log_phone}`, body).then((res) => {
       SuccessNotification({ title: "Succeed", message: "Your token has been verified." })
       setMode(2)
     }).catch(err => {
@@ -96,7 +92,7 @@ const ForgetPart = ({ setPhone, log_phone, setMode }) => {
 
 
   const ResendOtp = (e) => {
-    Url.post(`/resend-login-code/${log_phone}`).then((res) => {
+    Url().post(`/resend-login-code/${log_phone}`).then((res) => {
       SuccessNotification({ title: "Succeed", message: "Your OTP has been sent. Please wait a while..." })
     }).catch(err => {
       ErrorHandler(err)
@@ -140,7 +136,7 @@ const ForgetPart = ({ setPhone, log_phone, setMode }) => {
                             autoFocus: true
                           }}
 
-                          searchClass="search-class"
+                          searchclassName="search-class"
                           value={log_phone}
                           onChange={(e) => setPhone(`+${e}`)}
                           enableSearchField
@@ -183,11 +179,10 @@ const ChangePassword = ({ log_phone }) => {
 
   const handleChangePassword = (e) => {
     e.preventDefault()
-    Url.post(`/new-password/${log_phone}`, { password: password }).then(res => {
+    Url().post(`/new-password/${log_phone}`, { password: password }).then(res => {
       SuccessNotification({ title: "Succeed", message: "Your password has been changed." })
       navigate('/login')
     }).catch(err => {
-      console.log(err)
       ErrorHandler(err)
     })
   }

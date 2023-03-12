@@ -7,7 +7,6 @@ import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 import './sidebar.css'
 import kinkhel from '../../assets/images/Kinkhel.png';
-import axios from "axios";
 import * as GiIcons from 'react-icons/gi';
 import * as BiIcons from 'react-icons/bi';
 import * as IoIcons from 'react-icons/io';
@@ -17,6 +16,8 @@ import * as CgIcons from 'react-icons/cg';
 import * as HiIcons from 'react-icons/hi';
 import * as FiIcons from 'react-icons/fi';
 import { Url } from '../../Url';
+import { useSelector } from 'react-redux';
+import { ErrorHandler } from '../ErrorNotification';
 
 const Nav = styled.div`
   background: transparent;
@@ -64,13 +65,9 @@ const NavIcon = styled(Link)`
   @media (max-width: 2560px) {
     display:none
   }
-  
-  
   @media (max-width: 1440px) {
     display:none
   }
-
-  
 
   @media (max-width: 1024px) {
     display:none
@@ -78,7 +75,6 @@ const NavIcon = styled(Link)`
 
   @media (max-width: 425px) {
     display:initial
-    
   }
   @media (max-width:540px) {
     display:initial;
@@ -87,9 +83,10 @@ const NavIcon = styled(Link)`
 
 const SidebarNav = styled.nav`
 
-overflow:auto;
-  background: White;
+    background: White;
   width: 230px;
+  height:100vh;
+  overflow-y:auto;
   height: 200vh;
   display: flex;
   justify-content: center;
@@ -112,7 +109,7 @@ overflow:auto;
   @media (max-width:320px) {
     left: ${({ sidebar }) => (sidebar ? '-100%' : '0')};
   }
-  
+
 `;
 
 const SidebarWrap = styled.div`
@@ -122,15 +119,25 @@ const SidebarWrap = styled.div`
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(true);
   const [data, setData] = useState([])
-  const [sItems, setSItems] = useState([])
+  const [sItems, setSItems] = useState([{
+    title: "All Games",
+    path: `/games`,
+    icon: <IoIcons.IoIosPaper />,
+    cName: 'sub-nav'
+  }])
+  const site = useSelector(p => p.site?.site)
 
   useEffect(() => {
-    Url.get('categories?site=893022452').then((data2) => {
-      setData(data2?.data?.data?.data)
+    console.log("skadnk")
+    Url().get(`categories?site=${site}`).then((data) => {
+      console.log("data")
+      console.log(data?.data?.data?.data)
+      setData(data?.data?.data?.data)
     }).catch((err) => {
       console.log(err)
+      ErrorHandler(err)
     })
-  }, [])
+  }, [site,])
 
   useEffect(() => {
     if (data.length > 0) {
@@ -145,8 +152,9 @@ const Sidebar = () => {
         s2.push(s)
         setSItems(s2)
       });
+      console.log(sItems)
     }
-  }, [data, sItems])
+  }, [data,])
 
   const SidebarData2 = [
     {
@@ -163,8 +171,34 @@ const Sidebar = () => {
       icon: <CgIcons.CgGames />,
       iconClosed: <RiIcons.RiArrowDownSFill />,
       iconOpened: <RiIcons.RiArrowUpSFill />,
-
       subNav: sItems
+    },
+    {
+      title: 'Points',
+      icon: <CgIcons.CgGames />,
+      iconClosed: <RiIcons.RiArrowDownSFill />,
+      iconOpened: <RiIcons.RiArrowUpSFill />,
+
+      subNav: [
+        {
+          title: 'Points',
+          path: '/points',
+          icon: <IoIcons.IoIosPaper />,
+          cName: 'sub-nav'
+        },
+        {
+          title: 'Points History',
+          path: '/points-history',
+          icon: <FaIcons.FaHistory />,
+          cName: 'sub-nav'
+        },
+        {
+          title: 'Points Redeem',
+          path: '/points-redeem',
+          icon: <IoIcons.IoIosPaper />
+        },
+
+      ]
     },
     {
       title: 'Results',
@@ -172,16 +206,11 @@ const Sidebar = () => {
       icon: <GiIcons.GiPodiumWinner />
     },
     {
-      title: 'Information Centre',
-      path: '/informationcentre',
+      title: 'Information Center',
+      path: '/information-center',
       icon: <HiIcons.HiOutlineInformationCircle />
     },
 
-    {
-      title: 'News',
-      path: '/news',
-      icon: <BsIcons.BsNewspaper />
-    },
 
     {
       title: 'FAQs',
@@ -190,7 +219,7 @@ const Sidebar = () => {
     },
     {
       title: 'Refer & Earn',
-      path: '/referandearn',
+      path: '/refer-and-earn',
       icon: <BsIcons.BsPeople />
     },
   ]
@@ -215,13 +244,13 @@ const Sidebar = () => {
               <AiIcons.AiOutlineClose onClick={showSidebar} />
             </NavIcon>
             <div className="kinkhelimg">
-              <Link to="/home">
+              <Link to="/">
                 <img src={kinkhel} alt="" />
               </Link>
             </div>
-            {SidebarData2.map((item, index) => {
+            {/* {SidebarData2.map((item, index) => {
               return <SubMenu item={item} key={index} />;
-            })}
+            })} */}
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>

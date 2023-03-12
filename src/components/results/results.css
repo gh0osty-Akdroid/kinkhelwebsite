@@ -1,0 +1,103 @@
+.result-body{
+    margin-left: 260px;
+    padding: 8px;
+    
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.result-banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    padding: 20px 20px 20px 20px;
+    background-color: #4713a8;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  
+  
+  .result-banner .result-header{
+    color: white;
+  
+    width: 75%;
+    height: 600%;
+    margin: 20px 20px;
+  }
+
+  .result-heading{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+
+  .result-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+  }
+
+  .result-card::-webkit-scrollbar{
+    display: none;
+  }
+
+  .result-one{
+    width:300px;
+    height: auto;
+    background-color: whitesmoke;
+    border-radius: 10px;
+  }
+
+  .result-img{
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .result-img img{
+    width: auto;
+    height: 150px;
+  }
+
+
+  .result-category{
+    text-align: center;
+  }
+
+  .winning-number{
+    
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;    
+    padding: 0 10px 0px 10px;
+    
+  }
+.winning-number .circle{
+  background: #e3e3e3;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        color: #6e6e6e;
+        display: inline-block;
+        font-weight: bold;
+        line-height: 40px;
+        margin-right: 5px;
+        text-align: center;
+        width: 40px;
+
+    }
+
+    .play{
+        padding-bottom: 20px;
+    }
+
+
+    @media (max-width: 540px) {
+        .result-body{
+            margin-left: 20px;
+        }
+    }

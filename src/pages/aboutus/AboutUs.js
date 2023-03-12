@@ -7,8 +7,7 @@ import "./about.css";
 const AboutUs = () => {
   return (
     <div>
-      <Sidebar />
-      <NavBar />
+
       <div className="about">
         <div className="about-header">
           <h4>About us</h4>
@@ -23,8 +22,7 @@ const AboutUs = () => {
           (Whatsapp/Viber)
         </p>
       </div>
-      <Footer />
-      AboutUs
+     
     </div>
   );
 };

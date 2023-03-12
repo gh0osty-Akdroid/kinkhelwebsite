@@ -4,7 +4,7 @@ import "./banner.css"
 
 const Banner = () => {
   return (
-    <div id="mainbodybanner">
+    <>
          <div id="sm-banner" className="section-p1">
           <div className="banner-box">
             <h2>The Store where</h2>
@@ -15,15 +15,15 @@ const Banner = () => {
             </Link>
           </div>
 
-          <div class="banner-box banner-box2">
+          <div className="banner-box banner-box2">
             <h2> eGiftcard is a quick and easy</h2>
             <span>way to spend a gift card</span>
-            <Link to="/pages/giftcard">
+            <Link to="/pages/gift-card">
             <button className="white">Buy Now</button>
             </Link>
           </div>
         </div>
-    </div>
+    </>
   )
 }
 

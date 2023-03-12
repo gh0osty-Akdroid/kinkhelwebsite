@@ -1,14 +1,10 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
-import NavBar from "../../components/nav/NavBar";
-import Sidebar from "../../components/sidebar/Sidebar";
+
 import "./termsandcondition.css"
 
 const TermsandCondition = () => {
   return (
     <div>
-      <Sidebar />
-      <NavBar />
       <div className="terms">
         <h4 className="terms-h4">Terms and Condition</h4>
         <p className="terms-p">
@@ -67,7 +63,7 @@ const TermsandCondition = () => {
           Policy as amended from time to time.
         </p>
       </div>
-      <Footer />
+     
     </div>
   );
 };

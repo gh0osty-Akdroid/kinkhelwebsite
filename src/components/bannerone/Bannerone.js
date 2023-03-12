@@ -1,19 +1,68 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./bannerone.css"
-import {Link } from "react-router-dom"
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { ImgUrl, ImgUrl2, Url } from '../../Url';
+import { ErrorHandler } from '../ErrorNotification';
 
 const Bannerone = () => {
+
+  const [banner, setBanner] = useState([])
+
+  useEffect(() => {
+
+    Url().get('/banner').then((res) => {
+      setBanner(res?.data?.data['rows'])
+    }).catch((err) => {
+      ErrorHandler(err)
+    })
+  }, [])
+
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3 // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1 // optional, default to 1.
+    }
+  };
   return (
-    <div id="mainbodybannerone">
-        <div id="banner" className="section-m1">
-          <h4>Play now</h4>
-          <h2>
-            for <span>Life Changing</span> Jackpots
-          </h2>
-          <Link onClick={()=>window.open('http://35.80.167.18:81')}>
-          <button className="normal">Sign In</button>
-          </Link>
-        </div>
+    <div >
+      <Carousel
+        swipeable={false}
+        draggable={false}
+        showDots={true}
+        responsive={responsive}
+        ssr={true} // means to render carousel on server-side.
+        infinite={true}
+        autoPlaySpeed={1000}
+        autoPlay={true}
+        keyBoardControl={true}
+        customTransition="all .5"
+        transitionDuration={500}
+        containerClass="carousel-container"
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-40-px"
+      >
+        {
+          banner?.map((e, i) =>
+            <div>
+              <img src={`${ImgUrl}${e.image}`} />
+              <p className="legend">{e.text}</p>
+            </div>
+          )
+        }
+      </Carousel>
     </div>
   )
 }

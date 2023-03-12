@@ -101,12 +101,7 @@ const News = () => {
         </div>
         </div>
         </div>
-
-       
       </div>
-
-      <Footer/>
-      News
       </div>
   )
 }

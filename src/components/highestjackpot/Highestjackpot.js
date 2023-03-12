@@ -5,64 +5,70 @@ import "./highestjackpot.css"
 
 const Highestjackpot = () => {
   return (
-    <div id="mainbodyhijackpot">
-         <div class="headtwo">
-          <li id="lg-clock">
-            <MdIcons.MdTimer />
-          </li>
-          <h3>Highest Live Jackpots | </h3>
-          <p> Explore live jackpots in the world!</p>
+    <>
+
+
+      <div className="headtwo">
+        <li id="lg-clock">
+          <MdIcons.MdTimer />
+        </li>
+        <h3>Highest Live Jackpots | </h3>
+        <p> Explore live jackpots in the world!</p>
+      </div>
+
+
+{/* Clients */}
+      <div className="cardf">
+        <div className="cardone">
+          <div className="imgf">
+            <img src={lottery} alt="" />
+          </div>
+          <div className="textf">
+            <h3>Super Prize</h3>
+            <h2>Up to 100000</h2>
+          </div>
+          <button className="pickf">Play Now</button>
         </div>
 
-        <div className="cardf">
-          <div className="cardone">
-            <div className="imgf">
-              <img src={lottery} alt="" />
-            </div>
-            <div className="textf">
-              <h3>Super Prize</h3>
-              <h2>Up to 100000</h2>
-            </div>
-            <button className="pickf">Play Now</button>
+        <div className="cardone">
+          <div className="imgf">
+            <img src={lottery} alt="" />
           </div>
-
-          <div className="cardone">
-            <div className="imgf">
-              <img src={lottery} alt="" />
-            </div>
-            <div className="textf">
-              <h3>Super Prize</h3>
-              <h2>Up to 100000</h2>
-            </div>
-            <button className="pickf">Play Now</button>
+          <div className="textf">
+            <h3>Super Prize</h3>
+            <h2>Up to 100000</h2>
           </div>
-
-          <div className="cardone">
-            <div className="imgf">
-              <img src={lottery} alt="" />
-            </div>
-            <div className="textf">
-              <h3>Super Prize</h3>
-              <h2>Up to 100000</h2>
-            </div>
-            <button className="pickf">Play Now</button>
-          </div>
-
-          <div className="cardone">
-            <div className="imgf">
-              <img src={lottery} alt="" />
-            </div>
-            <div className="textf">
-              <h3>Super Prize</h3>
-              <h2>Up to 100000</h2>
-            </div>
-            <button className="pickf">Play Now</button>
-          </div>
-
-
-          
+          <button className="pickf">Play Now</button>
         </div>
-    </div>
+
+        <div className="cardone">
+          <div className="imgf">
+            <img src={lottery} alt="" />
+          </div>
+          <div className="textf">
+            <h3>Super Prize</h3>
+            <h2>Up to 100000</h2>
+          </div>
+          <button className="pickf">Play Now</button>
+        </div>
+
+        <div className="cardone">
+          <div className="imgf">
+            <img src={lottery} alt="" />
+          </div>
+          <div className="textf">
+            <h3>Super Prize</h3>
+            <h2>Up to 100000</h2>
+          </div>
+          <button className="pickf">Play Now</button>
+        </div>
+
+
+
+      </div>
+
+    </>
+
   )
 }
 

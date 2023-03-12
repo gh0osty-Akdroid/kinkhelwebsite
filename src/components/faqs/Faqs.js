@@ -9,8 +9,7 @@ import "./faq.css";
 const Faqs = () => {
   return (
     <div>
-      <Sidebar />
-      <NavBar />
+
       <div className="collapseable-faq">
         <div className="infobody-banner-faq">
           <div className="info-header-faq">
@@ -38,7 +37,7 @@ const Faqs = () => {
           </Accordion.Item>
         </Accordion>
       </div>
-      <Footer />
+
     </div>
   );
 };

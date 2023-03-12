@@ -7,8 +7,7 @@ import "./returnandrefund.css";
 const ReturnandRefund = () => {
   return (
     <div>
-      <Sidebar />
-      <NavBar />
+
       <div className="return">
         <h4 className="return-h4">Return and Refund Policy</h4>
         <p>
@@ -31,7 +30,6 @@ const ReturnandRefund = () => {
         </p>
         
       </div>
-      <Footer/>
     </div>
   );
 };

@@ -1,0 +1,40 @@
+.pointhistory-body{
+    margin-left: 260px;
+    padding: 8px;
+    
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+
+.pointhistory-banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    padding: 20px 20px 20px 20px;
+    background-color: #4713a8;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  
+  
+  .pointhistory-banner .pointhistory-header{
+    color: white;
+  
+    width: 75%;
+    height: 600%;
+    margin: 20px 20px;
+  }
+
+
+ .pointhistory-body .table{
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.pointhistory-body .pagination{
+    margin-top: 25px;
+}

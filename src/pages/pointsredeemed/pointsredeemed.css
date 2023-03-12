@@ -1,0 +1,39 @@
+.pointsredeemed-body{
+    margin-left: 260px;
+    padding: 8px;
+    
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.pointsredeemed-banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    padding: 20px 20px 20px 20px;
+    background-color: #4713a8;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+  }
+  
+  
+  .pointsredeemed-banner .pointsredeemed-header{
+    color: white;
+  
+    width: 75%;
+    height: 600%;
+    margin: 20px 20px;
+  }
+
+
+  .pointsredeemed-content{
+    margin-top: 25px;
+  }
+
+
+  .pointsredeemed-code{
+    margin-top: 25px;
+  }

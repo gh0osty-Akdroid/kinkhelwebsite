@@ -73,7 +73,7 @@ const LoginMode = ({ setMode }) => {
             phone: log_phone,
             password: log_password
         }
-        Url.post(`/login`, body).then((res) => {
+        Url().post(`/login`, body).then((res) => {
             setSuccess(true)
         }).catch(err => {
             ErrorHandler(err)
@@ -89,7 +89,7 @@ const LoginMode = ({ setMode }) => {
             history(from)
         }
         Title("Login")
-    }, [ token])
+    }, [token])
 
 
     const renderTime = () => React.Fragment;
@@ -106,20 +106,18 @@ const LoginMode = ({ setMode }) => {
         const body = {
             token: OTP,
         }
-        Url.post(`/login-verify/${log_phone}`, body).then((res) => {
-            console.log(res?.data?.data)
+        Url().post(`/login-verify/${log_phone}`, body).then((res) => {
             dispatch(fetchTokenSuccess(res?.data?.data?.token))
             dispatch(fetchSiteSuccess(res?.data?.data?.user?.site))
             history('/')
             SuccessNotification({ title: "Welcome!!", message: "You have been Logged in." })
         }).catch(err => {
-            console.log(err)
             ErrorHandler(err)
         })
     }
 
     const ResendOtp = (e) => {
-        Url.post(`/resend-login-code/${log_phone}`).then((res) => {
+        Url().post(`/resend-login-code/${log_phone}`).then((res) => {
             SuccessNotification({ title: "Succeed", message: "Your OTP has been sent. Please wait a while..." })
         }).catch(err => {
             ErrorHandler(err)
@@ -149,7 +147,7 @@ const LoginMode = ({ setMode }) => {
                                                 <ReactPhoneInput
                                                     className="ml-5 mb-3 justify-between  white  rounded  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                     defaultCountry="pl"
-                                                    searchClass="search-class"
+                                                    searchclassName="search-class"
                                                     value={log_phone}
                                                     onChange={(e) => setPhone(`+${e}`)}
                                                     enableSearchField
@@ -218,7 +216,7 @@ const LoginMode = ({ setMode }) => {
                                                 <ReactPhoneInput
                                                     className="ml-5 mb-3 justify-between  white  rounded  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                     defaultCountry="pl"
-                                                    searchClass="search-class"
+                                                    searchclassName="search-class"
                                                     value={log_phone}
                                                     onChange={(e) => setPhone(`+${e}`)}
                                                     enableSearchField
@@ -284,9 +282,8 @@ const RegisterMode = ({ setMode }) => {
 
     useEffect(() => {
         Title("Register")
-        Url.get('/sites').then((res) => {
+        Url().get('/sites').then((res) => {
             setSites(res?.data?.data)
-            console.log(res?.data?.data)
         })
     }, [])
 
@@ -302,7 +299,7 @@ const RegisterMode = ({ setMode }) => {
                 email: email,
                 site: site
             }
-            Url.post('/register', body).then((res) => {
+            Url().post('/register', body).then((res) => {
                 SuccessNotification({ title: "Successfully registered", message: "Welcome to our world!" })
                 SuccessNotification({ title: "Verification", message: "Please Verify Your account." })
             }).catch(err => {
@@ -359,7 +356,7 @@ const RegisterMode = ({ setMode }) => {
                                         <ReactPhoneInput
                                             className="ml-5 mb-3 justify-between  white  rounded  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                             defaultCountry="pl"
-                                            searchClass="search-class"
+                                            searchclassName="search-class"
                                             value={phone}
                                             onChange={(e) => setPhone(`+${e}`)}
                                             enableSearchField
@@ -380,7 +377,7 @@ const RegisterMode = ({ setMode }) => {
                                         <PasswordInput
                                             className="ml-5  mb-3 justify-between shadow appearance-none border rounded text-gray-700 leading-tight "
                                             placeholder="Password"
-                                            value={consfirmPass}
+                                            value={confirmPass}
                                             onChange={(e) => setConfirm(e.target.value)}
                                         />
                                         <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -443,7 +440,7 @@ const RegisterMode = ({ setMode }) => {
                                             <ReactPhoneInput
                                                 className="ml-5 mb-3 justify-between  white  rounded  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                 defaultCountry="pl"
-                                                searchClass="search-class"
+                                                searchclassName="search-class"
                                                 value={phone}
                                                 onChange={(e) => setPhone(`+${e}`)}
                                                 enableSearchField
@@ -482,13 +479,13 @@ const RegisterMode = ({ setMode }) => {
                                                 <h2 className=" ml-5 block text-gray-700 text-sm font-bold mb-2 text-gray-200">
                                                     Select Your Region
                                                 </h2>
-                                                <select onChange={(e)=>setSite(e.target.value)} value={site} className="ml-5 p-2 mb-3 justify-between shadow appearance-none border rounded text-gray-700 leading-tight ">
+                                                <select onChange={(e) => setSite(e.target.value)} value={site} className="ml-5 p-2 mb-3 justify-between shadow appearance-none border rounded text-gray-700 leading-tight ">
                                                     <option>Please select one.</option>
-                                                    {sites.map((e) =>
-                                                        <option value={e.id}> {e.site_region}</option>
+                                                    {sites.map((e, i) =>
+                                                        <option key={i} value={e.id}> {e.site_region}</option>
                                                     )}
                                                 </select>
-                                                <Button variant='outline' onClick={()=>setDisplay(true)} >Next</Button>
+                                                <Button variant='outline' onClick={() => setDisplay(true)} >Next</Button>
                                             </>
 
                                     }

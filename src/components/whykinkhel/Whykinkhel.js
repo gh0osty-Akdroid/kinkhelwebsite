@@ -9,7 +9,7 @@ import "./whykinkhel.css"
 
 const Whykinkhel = () => {
   return (
-    <div id="mainbodywhykinkhel">
+    <>
         <div className="Headingjackpot">
           <h2>Why play with Kinkhel?</h2>
         </div>
@@ -51,7 +51,7 @@ const Whykinkhel = () => {
             </p>
           </div>
         </div>
-    </div>
+    </>
   )
 }
 

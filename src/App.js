@@ -1,67 +1,103 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+
+import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Results from "./components/results/Results";
-import InformationCard from "./components/informationcentre/InformationCard";
-import Home from "./components/home/Home";
-import Uspowerball from "./pages/Uspowerball";
-import UsMegamillions from "./pages/UsMegamillions";
-import EuroJackpot from "./pages/EuroJackpot";
-import Bonoloto from "./pages/Bonoloto";
-import EuroMillions from "./pages/EuroMillions";
-import News from "./components/news/News";
-
-import Faqs from "./components/faqs/Faqs";
-import ReferandEarn from "./components/referandearn/ReferandEarn"
-import EuroMillionsInfo from "./pages/gamesinformation/EuroMillionsInfo";
-import Giftcard from "./pages/Giftcard";
-import Store from "./pages/Store";
-import AboutUs from "./pages/aboutus/AboutUs";
-import Login from "./components/login/Login";
-import PlayandWin from "./components/participate/PlayandWin";
-import CustomerReward from "./pages/customerrewardpolicy/CustomerReward";
-import ReturnandRefund from "./pages/returnandrefund/ReturnandRefund";
-import TermsandCondition from "./pages/termsandcondition/TermsandCondition";
-import ContactUs from "./pages/contactus/ContactUs";
-import Category from "./pages/Category";
+import { MantineProvider } from '@mantine/core';
+import { NotificationsProvider } from '@mantine/notifications';
+import { ModalsProvider } from '@mantine/modals';
+import Router from "./Routes";
+import axios from "axios";
+import { Url } from "./Url";
+import { ErrorHandler } from "./components/ErrorNotification";
+import { useDispatch } from "react-redux";
+import { fetchSiteSuccess } from "./action/SiteSetting";
 
 
 
 
-function App() {
-  return (
-    <Router>
 
-      <Routes  >
-        <Route path="" element={<Home />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/category/:id" element={<Category />}></Route>
-        <Route path="/results" element={<Results />}></Route>
-        <Route path="/game/:id" exact element={<Uspowerball />} />
-        <Route path="/alllotteries/usmegamillions" exact element={<UsMegamillions />} />
-        <Route path="/alllotteries/eurojackpot" exact element={<EuroJackpot />} />
-        <Route path="/alllotteries/bonoloto" exact element={<Bonoloto />} />
-        <Route path="/alllotteries/euromillions" exact element={<EuroMillions />} />
-        <Route path="/informationcentre" element={<InformationCard />} />
-        <Route path="/news" element={<News />} />
 
-        <Route path="/faqs" element={<Faqs />} />
-        <Route path="/referandearn" element={<ReferandEarn />} />
-        <Route path="/alllotteries/USPowerball" exact element={<Uspowerball />} />
-        <Route path="/pages/gamesinformation/euromillionsinfo" exact element={<EuroMillionsInfo />} />
-        <Route path="/pages/giftcard" element={<Giftcard />} />
-        <Route path="/pages/store" element={<Store />} />
-        <Route path="/pages/aboutus" element={<AboutUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/rewards" element={<PlayandWin />} />
-        <Route path="/pages/customerrewardpolicy" element={<CustomerReward />} />
-        <Route path="/pages/returnandrefundpolicy" element={<ReturnandRefund />} />
-        <Route path="/pages/termsandconditions" element={<TermsandCondition />} />
-        <Route path="/pages/contactus" element={<ContactUs />} />
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0,
+};
+function success(pos) {
 
-      </Routes>
-    </Router>
-  );
+
 }
 
-export default App;
+function errors(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+
+
+
+
+
+export default function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    axios.get('https://ipapi.co/json/').then(res1 => {
+      Url().get('/sites').then(res2 => {
+        res2?.data?.data.forEach(e => {
+          if (e.site_region.toLowerCase() === res1?.data?.country_name?.toLowerCase()) {
+            dispatch(fetchSiteSuccess(e.id))
+          }
+        });
+      }).catch(err => {
+        ErrorHandler(err)
+      })
+    })
+
+  }, [])
+
+
+  if (navigator.geolocation) {
+    navigator.permissions
+      .query({ name: "geolocation" })
+      .then(function (result) {
+        if (result.state === "granted") {
+          navigator.geolocation.getCurrentPosition(success);
+        } else if (result.state === "prompt") {
+          navigator.geolocation.getCurrentPosition(success, errors, options);
+        } else if (result.state === "denied") {
+          alert("Please enable the location.")
+          //If denied then you have to show instructions to enable location
+        }
+        result.onchange = function () {
+        };
+      });
+  } else {
+    alert("Sorry Not available!");
+  }
+
+
+  return (
+    <BrowserRouter>
+      <MantineProvider withNormalizeCSS withGlobalStyles >
+        <NotificationsProvider position="top-right" zIndex={2077}>
+          <ModalsProvider>
+            <Router />
+          </ModalsProvider>
+        </NotificationsProvider>
+      </MantineProvider>
+    </BrowserRouter>
+  );
+
+}
+
+
+
+
+
+
+
+
+
+
+

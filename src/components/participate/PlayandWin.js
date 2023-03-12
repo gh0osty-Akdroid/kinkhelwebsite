@@ -31,7 +31,6 @@ const PlayandWin = () => {
           <button onClick={() => window.open('http://35.80.167.18:81/login')}>Please Login/Register</button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
